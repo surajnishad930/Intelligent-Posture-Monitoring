@@ -1,0 +1,25 @@
+// C++ code
+int flex = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  Serial.begin(9600);
+  pinMode(12, OUTPUT);
+  
+}
+
+void myFunction() {
+  if(flex < 180){
+    return tone(12,1000,100);  
+  }  
+ 
+}
+
+void loop()
+{
+  flex = analogRead(A0);
+  Serial.println(flex);
+  myFunction();
+  delay(100); // Delay a little bit to improve simulation performance
+}
